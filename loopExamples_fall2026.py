@@ -5,10 +5,16 @@
 # ***************************************************************************************************
 
 def loop_through_it(data_structure):
-    ''' prints each item in structure that was passed in. None is returned.'''
-    for item in data_structure:
-        print(item, end="\t")
+    """Prints each item in the structure passed in. Returns None."""
 
+    if isinstance(data_structure, dict):
+        for key in data_structure:
+            print(f"{key}: {data_structure[key]}", end="\t")
+    else:
+        for item in data_structure:
+            print(item, end="\t")
+
+       
 def num_vowels(input_text):
     ''' count and return the number of vowels in the input text'''
     count = 0
